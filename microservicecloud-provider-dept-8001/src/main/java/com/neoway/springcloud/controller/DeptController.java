@@ -3,8 +3,13 @@ package com.neoway.springcloud.controller;
 import com.neoway.springcloud.model.Dept;
 import com.neoway.springcloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -16,6 +21,7 @@ import java.util.List;
 public class DeptController {
     @Autowired
     private DeptService deptService;
+
 
     @PostMapping("/dept/add")
     public void addDept(@RequestBody Dept dept) {
@@ -33,4 +39,5 @@ public class DeptController {
     public List<Dept> list(){
         return deptService.findAll();
     }
+
 }
