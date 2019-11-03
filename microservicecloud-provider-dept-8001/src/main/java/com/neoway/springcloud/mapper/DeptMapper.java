@@ -18,7 +18,7 @@ public interface DeptMapper {
      * @param dept 待添加部门实体
      * @return
      */
-    void addDept(@Param(value = "dept")Dept dept);
+    int addDept(@Param(value = "dept")Dept dept);
 
     /**
      * 依据id查询部门

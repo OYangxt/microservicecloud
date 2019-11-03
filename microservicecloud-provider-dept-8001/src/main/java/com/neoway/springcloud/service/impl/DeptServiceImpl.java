@@ -18,8 +18,12 @@ public class DeptServiceImpl implements DeptService {
     private DeptMapper deptMapper;
 
     @Override
-    public void addDept(Dept dept) {
-        deptMapper.addDept(dept);
+    public boolean addDept(Dept dept) {
+
+        if (deptMapper.addDept(dept) != 0) {
+            return true;
+        }
+        return false;
     }
 
     @Override

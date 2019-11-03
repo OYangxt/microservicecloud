@@ -40,7 +40,7 @@ public class DeptConsumerController {
         String host = serviceInstance.getHost();
         int port = serviceInstance.getPort();
 
-        return restTemplate.getForObject(host + ":" + port + "/dept/get/" +id, Dept.class);
+        return restTemplate.getForObject("http://"+host + ":" + port + "/dept/get/" +id, Dept.class);
     }
 
 }

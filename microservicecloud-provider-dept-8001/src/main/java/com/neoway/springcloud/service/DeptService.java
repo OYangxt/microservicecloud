@@ -13,7 +13,7 @@ public interface DeptService {
      * 添加部门信息
      * @param dept 待添加部门实体
      */
-    void addDept(Dept dept);
+    boolean addDept(Dept dept);
 
     /**
      * 依据id查询部门

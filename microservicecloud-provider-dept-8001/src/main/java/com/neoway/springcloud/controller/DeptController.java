@@ -24,9 +24,9 @@ public class DeptController {
 
 
     @PostMapping("/dept/add")
-    public void addDept(@RequestBody Dept dept) {
+    public boolean addDept(@RequestBody Dept dept) {
 
-        deptService.addDept(dept);
+        return deptService.addDept(dept);
     }
 
 
